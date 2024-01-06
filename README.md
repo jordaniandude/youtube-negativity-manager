@@ -1,26 +1,50 @@
-YouTube Negativity Manager
-=======================================
-A Python script to get rid of negative comments for your YouTube video.
+# YouTube Negativity Manager
 
+A Python script to manage negative comments on your YouTube videos.
 
------
+## Overview
 
-The program does the following:
+This Python script leverages the YouTube API and OpenAI's ChatGPT to identify and remove negative comments from your YouTube videos. The process involves retrieving your recent videos, listing comments, evaluating their positivity, and deleting negative comments based on their IDs.
 
-1. Get my recent videos
+## Script Explanation
 
-2. List all comments for a video (include comment text and id)
+The script performs the following steps:
 
-3. For each comment, check positivity using chatgpt (return yes or no)
+1. Retrieve your most recent videos.
+2. List the top 100 comments for each video, including comment text and ID.
+3. Evaluate the positivity of each comment using ChatGPT.
+4. Delete any identified negative comments based on their IDs.
 
-4. delete any negative comment using comment id.
+## Prerequisites
 
+Before running the script, you need the following authentication methods:
 
-You need the following two authentication methods:
-1. An [API key](https://platform.openai.com/docs/quickstart?context=python) to authenticate to ChatGPT API.
-2. A [client secrets json file](https://developers.google.com/youtube/v3/guides/authentication) to authenticate to YouTube API that uses OAuth 2.0.
+1. **ChatGPT API Key:** Obtain an [API key](https://platform.openai.com/docs/quickstart?context=python) to authenticate to the ChatGPT API.
+2. **YouTube API Authentication:** Obtain a [client secrets JSON file](https://developers.google.com/youtube/v3/guides/authentication) for OAuth 2.0 authentication.
 
-To run the script:
-```
-python3 youtube.py
-```
+## Dependencies
+
+- `google_auth_oauthlib`
+- `googleapiclient`
+- `openai`
+
+## Usage
+
+1. Clone this repository:
+
+    ```bash
+    git clone https://github.com/jordaniandude/youtube-negativity-manager.git
+    cd youtube-negativity-manager
+    ```
+    
+2. Run the script:
+
+    ```bash
+    python3 youtube.py
+    ```
+
+## Disclaimer
+
+Please use this script responsibly, as deleting comments can impact community engagement. Make sure to review the negative comments and adjust the script accordingly before enabling comment deletion.
+
+Feel free to customize the script or provide feedback to enhance its functionality.
